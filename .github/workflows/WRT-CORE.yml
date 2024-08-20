@@ -196,6 +196,7 @@ jobs:
           cd ./wrt/
           echo 'start make...'
           echo -e "$(($(nproc))) thread compile"
+          df -hT; du -h --max-depth=1; free -h
           make -j$(nproc) || make -j1 V=s; df -hT; du -h --max-depth=1
 
       - name: Machine Information
