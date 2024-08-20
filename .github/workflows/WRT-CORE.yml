@@ -187,8 +187,8 @@ jobs:
           make download -j$(nproc)
 
       - name: 检查空间使用情况
-      if: (!cancelled())
-      run: df -hT
+        if: (!cancelled())
+        run: df -hT
 
       - name: Compile Firmware
         if: env.WRT_TEST != 'true'
